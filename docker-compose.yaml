@@ -22,10 +22,11 @@ services:
     command: --language auto
 
   piper:
-    image: rhasspy/piper
+    image: rhasspy/wyoming-piper:latest
     ports:
-      - "59125:59125"
+      - "10200:10200"
     volumes:
       - ./piper/models:/data
     environment:
       - VOICE=de_DE-thorsten-high
+    command: '--voice de_DE-thorsten-high'
