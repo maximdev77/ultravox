@@ -1,20 +1,20 @@
-# Ultravox Selfhosted Dockerfile
+# Dockerfile für direktes Ausführen von Ultravox (ohne pip install)
 FROM python:3.11-slim
 
-# Install system dependencies
+# System-Abhängigkeiten
 RUN apt-get update && apt-get install -y ffmpeg git && rm -rf /var/lib/apt/lists/*
 
-# Set workdir
+# Arbeitsverzeichnis
 WORKDIR /app
 
-# Copy project files
+# Projektdateien kopieren
 COPY . .
 
-# Install Python dependencies
-RUN pip install --upgrade pip && pip install .
+# Python-Abhängigkeiten installieren
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Expose the server port
+# Port freigeben
 EXPOSE 8080
 
-# Start the Ultravox HTTP server
+# Startbefehl
 CMD ["python", "ultravox/server.py"]
