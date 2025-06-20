@@ -7,7 +7,7 @@ services:
       - "8082:8080"
     environment:
       - STT_URL=http://whispercpp:9000/transcribe
-      - TTS_URL=http://piper:59125/speak
+      - TTS_URL=http://piper:10200/speak
       - LANGUAGE_SUPPORT=de,en
       - ENABLE_TWILIO=true
       - TWILIO_WEBHOOK_SECRET=zPs3IpdNpeUmrqgsx3h6
