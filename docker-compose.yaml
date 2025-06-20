@@ -14,7 +14,7 @@ services:
     depends_on:
       - whispercpp
       - piper
-    command: bash -c "pip install poetry && poetry install && poetry run python -m ultravox.server"
+    command: bash -c "poetry install && sleep infinity"
 
   whispercpp:
     image: ghcr.io/ggerganov/whisper.cpp:main
