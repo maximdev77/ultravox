@@ -8,6 +8,8 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
+fastapi = "^0.111.0"
+uvicorn = "^0.30.1"
 python = ">=3.10,<4.0"
 torch = ">=2.4"
 transformers = {version = ">=4.43.1,<4.48.0 || >4.48.0", extras = ["torch"]}
